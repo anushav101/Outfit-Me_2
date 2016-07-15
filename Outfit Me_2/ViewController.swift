@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     let bottomsDataProvider = BottomsDataProvider()
     let outerwearDataProvider = OuterwearDataProvider()
     let dressesDataProvider = DressesDataProvider()
+    let accessoriesDataProvider = AccessoriesDataProvider()
+    let shoesDataProvider = ShoesDataProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +63,11 @@ extension ViewController: UITableViewDataSource{
         }
         else if indexPath.row == 4{
             cell.titleLabel.text = "Accessories"
+            cell.collectionView.dataSource = accessoriesDataProvider
         }
         else if indexPath.row == 5{
             cell.titleLabel.text = "Shoes"
+            cell.collectionView.dataSource = shoesDataProvider
         }
         
         else {

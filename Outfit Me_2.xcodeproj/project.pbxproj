@@ -21,6 +21,8 @@
 		240FCB5D1D399E2600401405 /* BottomsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB5C1D399E2600401405 /* BottomsDataSource.swift */; };
 		240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB5E1D399F5700401405 /* OuterwearDataSource.swift */; };
 		240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB601D39A08E00401405 /* DressesDataProvider.swift */; };
+		240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */; };
+		240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB641D39A24600401405 /* ShoesDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		240FCB5C1D399E2600401405 /* BottomsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomsDataSource.swift; sourceTree = "<group>"; };
 		240FCB5E1D399F5700401405 /* OuterwearDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OuterwearDataSource.swift; sourceTree = "<group>"; };
 		240FCB601D39A08E00401405 /* DressesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DressesDataProvider.swift; sourceTree = "<group>"; };
+		240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoriesDataSource.swift; sourceTree = "<group>"; };
+		240FCB641D39A24600401405 /* ShoesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				240FCB5E1D399F5700401405 /* OuterwearDataSource.swift */,
 				240FCB5C1D399E2600401405 /* BottomsDataSource.swift */,
 				240FCB601D39A08E00401405 /* DressesDataProvider.swift */,
+				240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */,
+				240FCB641D39A24600401405 /* ShoesDataProvider.swift */,
 			);
 			name = "Data providers";
 			sourceTree = "<group>";
@@ -175,9 +181,11 @@
 				240FCB2A1D38094700401405 /* MyClosetViewController.swift in Sources */,
 				240FCB4E1D385A9900401405 /* TableViewCell.swift in Sources */,
 				240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */,
+				240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */,
 				240FCB5B1D39907F00401405 /* CollectionViewCell.swift in Sources */,
 				240FCB181D37F67400401405 /* ViewController.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
+				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
 				240FCB5D1D399E2600401405 /* BottomsDataSource.swift in Sources */,
