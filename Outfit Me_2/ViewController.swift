@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let topsDataProvider = TopsDataProvider()
+    let bottomsDataProvider = BottomsDataProvider()
+    let outerwearDataProvider = OuterwearDataProvider()
+    let dressesDataProvider = DressesDataProvider()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,4 +27,74 @@ class ViewController: UIViewController {
 
 
 }
+
+extension ViewController: UITableViewDataSource{
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 6
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("Categories", forIndexPath: indexPath) as! TableViewCell
+        cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        
+        if indexPath.row == 0{
+            cell.titleLabel.text = "Tops"
+            cell.collectionView.dataSource = topsDataProvider
+        }
+            
+        else if indexPath.row == 1{
+            cell.titleLabel.text = "Bottom"
+            cell.collectionView.dataSource = bottomsDataProvider
+        }
+        else if indexPath.row == 2{
+            cell.titleLabel.text = "Outerwear"
+            cell.collectionView.dataSource = outerwearDataProvider
+        }
+        else if indexPath.row == 3{
+            cell.titleLabel.text = "Dresses"
+            cell.collectionView.dataSource = dressesDataProvider
+
+        }
+        else if indexPath.row == 4{
+            cell.titleLabel.text = "Accessories"
+        }
+        else if indexPath.row == 5{
+            cell.titleLabel.text = "Shoes"
+        }
+        
+        else {
+        }
+        
+        print("ViewController - cellForRowAtIndexPath - \(cell.collectionView.dataSource)")
+        return cell
+
+        
+    }
+    
+//    override func tableView(tableView: UITableView,
+//                            willDisplayCell cell: UITableViewCell,
+//                                            forRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        guard let tableViewCell = cell as? TableViewCell else { return }
+//        
+//        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+//    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
