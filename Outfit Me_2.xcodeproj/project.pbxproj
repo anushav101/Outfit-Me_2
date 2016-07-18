@@ -96,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				240FCB581D39893D00401405 /* TopsDataProvider.swift */,
-				240FCB5E1D399F5700401405 /* OuterwearDataSource.swift */,
 				240FCB5C1D399E2600401405 /* BottomsDataSource.swift */,
+				240FCB5E1D399F5700401405 /* OuterwearDataSource.swift */,
 				240FCB601D39A08E00401405 /* DressesDataProvider.swift */,
 				240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */,
 				240FCB641D39A24600401405 /* ShoesDataProvider.swift */,
@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					240FCB111D37F67400401405 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = QUKWG6Z5CP;
 					};
 				};
 			};
@@ -301,10 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Outfit-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -312,10 +316,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Outfit Me_2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Outfit-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

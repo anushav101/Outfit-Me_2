@@ -14,9 +14,16 @@ class TopsDataProvider: NSObject, UICollectionViewDataSource {
     
     override init() {
         super.init()
-        for _ in 0..<10 {
+        for i in 0..<10 {
             let image = UIImage(named: "puppy .jpg")
-            images.append(image!)
+            let kittenImage = UIImage(named: "kitten.jpg")
+            if i%2 == 0 {
+                images.append(image!)
+            }
+            else {
+                images.append(kittenImage!)
+                
+            }
         }
     }
     

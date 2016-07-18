@@ -200,7 +200,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsK-wp-iIx">
-                                                    <rect key="frame" x="20" y="38" width="520" height="7"/>
+                                                    <rect key="frame" x="20" y="38" width="497" height="7"/>
                                                     <color key="backgroundColor" red="0.16862745100000001" green="0.63137254899999995" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="7" id="0df-Gc-Pq7"/>
@@ -242,6 +242,17 @@
                                                         </mask>
                                                     </variation>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-OT-dXU">
+                                                    <rect key="frame" x="535" y="128" width="46" height="59"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Dr-azW">
+                                                    <rect key="frame" x="530" y="124" width="57" height="63"/>
+                                                    <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="74"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="lml-Sy-fgb" secondAttribute="top" id="7Q1-Tu-eRf"/>
@@ -255,11 +266,15 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vjv-Ov-GH8" secondAttribute="trailing" constant="75" id="XMH-LQ-Epn"/>
                                                 <constraint firstItem="GsK-wp-iIx" firstAttribute="top" secondItem="lml-Sy-fgb" secondAttribute="bottom" id="Ymt-YN-u2r"/>
                                                 <constraint firstItem="GsK-wp-iIx" firstAttribute="leading" secondItem="XTO-2E-D26" secondAttribute="leadingMargin" constant="12" id="Zxb-PC-6eE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EHa-Dr-azW" secondAttribute="bottom" constant="83.5" id="hlE-9x-7JE"/>
                                                 <constraint firstItem="GsK-wp-iIx" firstAttribute="leading" secondItem="XTO-2E-D26" secondAttribute="leading" constant="20" id="kv6-nn-81Q"/>
                                                 <constraint firstItem="Vjv-Ov-GH8" firstAttribute="top" secondItem="GsK-wp-iIx" secondAttribute="bottom" constant="20" id="nxu-Jl-DPY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="GsK-wp-iIx" secondAttribute="trailing" constant="52" id="pYc-Bp-tTX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EHa-Dr-azW" secondAttribute="trailing" constant="5" id="oeg-pL-JDk"/>
+                                                <constraint firstItem="EHa-Dr-azW" firstAttribute="leading" secondItem="Vjv-Ov-GH8" secondAttribute="trailing" constant="13" id="omZ-RC-UpH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GsK-wp-iIx" secondAttribute="trailing" constant="75" id="pYc-Bp-tTX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lml-Sy-fgb" secondAttribute="trailing" constant="490" id="ryP-0U-GQR"/>
                                                 <constraint firstItem="Vjv-Ov-GH8" firstAttribute="top" secondItem="XTO-2E-D26" secondAttribute="topMargin" constant="57" id="s3x-zv-BLP"/>
+                                                <constraint firstItem="EHa-Dr-azW" firstAttribute="top" secondItem="GsK-wp-iIx" secondAttribute="bottom" constant="79" id="v4E-nr-AzA"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">

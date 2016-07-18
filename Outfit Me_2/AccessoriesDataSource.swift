@@ -14,7 +14,7 @@ class AccessoriesDataProvider: NSObject, UICollectionViewDataSource {
     
     override init() {
         super.init()
-        for _ in 0..<10 {
+        for _ in 0..<2 {
             let image = UIImage(named: "puppy .jpg")
             images.append(image!)
         }

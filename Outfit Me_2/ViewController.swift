@@ -49,7 +49,7 @@ extension ViewController: UITableViewDataSource{
         }
             
         else if indexPath.row == 1{
-            cell.titleLabel.text = "Bottom"
+            cell.titleLabel.text = "Bottoms"
             cell.collectionView.dataSource = bottomsDataProvider
         }
         else if indexPath.row == 2{
