@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17754AA6ABF6C6DC7715C42D /* Pods_Outfit_Me_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */; };
 		240FCB161D37F67400401405 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB151D37F67400401405 /* AppDelegate.swift */; };
 		240FCB181D37F67400401405 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB171D37F67400401405 /* ViewController.swift */; };
 		240FCB1B1D37F67400401405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240FCB191D37F67400401405 /* Main.storyboard */; };
@@ -23,9 +24,14 @@
 		240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB601D39A08E00401405 /* DressesDataProvider.swift */; };
 		240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */; };
 		240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB641D39A24600401405 /* ShoesDataProvider.swift */; };
+		240FCB6B1D3D74E400401405 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB6A1D3D74E400401405 /* PhotoTakingHelper.swift */; };
+		240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB6C1D3EA1E100401405 /* ParseLoginHelper.swift */; };
+		240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB6E1D3EA75500401405 /* ErrorHandling.swift */; };
+		240FCB711D3EABE300401405 /* ParsePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB701D3EABE300401405 /* ParsePhotos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.release.xcconfig"; sourceTree = "<group>"; };
 		240FCB121D37F67400401405 /* Outfit Me_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Outfit Me_2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		240FCB151D37F67400401405 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		240FCB171D37F67400401405 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +50,12 @@
 		240FCB601D39A08E00401405 /* DressesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DressesDataProvider.swift; sourceTree = "<group>"; };
 		240FCB621D39A1D800401405 /* AccessoriesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoriesDataSource.swift; sourceTree = "<group>"; };
 		240FCB641D39A24600401405 /* ShoesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesDataProvider.swift; sourceTree = "<group>"; };
+		240FCB6A1D3D74E400401405 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
+		240FCB6C1D3EA1E100401405 /* ParseLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseLoginHelper.swift; sourceTree = "<group>"; };
+		240FCB6E1D3EA75500401405 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		240FCB701D3EABE300401405 /* ParsePhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsePhotos.swift; sourceTree = "<group>"; };
+		691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.debug.xcconfig"; sourceTree = "<group>"; };
+		92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outfit_Me_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17754AA6ABF6C6DC7715C42D /* Pods_Outfit_Me_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,8 @@
 			children = (
 				240FCB141D37F67400401405 /* Outfit Me_2 */,
 				240FCB131D37F67400401405 /* Products */,
+				524B74790CA43C5738249ACD /* Pods */,
+				CFFAF585A0EAAB8DAA838E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,7 +97,11 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB171D37F67400401405 /* ViewController.swift */,
 				240FCB4D1D385A9900401405 /* TableViewCell.swift */,
+				240FCB701D3EABE300401405 /* ParsePhotos.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
+				240FCB6A1D3D74E400401405 /* PhotoTakingHelper.swift */,
+				240FCB6C1D3EA1E100401405 /* ParseLoginHelper.swift */,
+				240FCB6E1D3EA75500401405 /* ErrorHandling.swift */,
 				240FCB5A1D39907F00401405 /* CollectionViewCell.swift */,
 				240FCB1C1D37F67400401405 /* Assets.xcassets */,
 				240FCB1E1D37F67400401405 /* LaunchScreen.storyboard */,
@@ -105,6 +124,23 @@
 			name = "Data providers";
 			sourceTree = "<group>";
 		};
+		524B74790CA43C5738249ACD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */,
+				12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CFFAF585A0EAAB8DAA838E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 240FCB241D37F67400401405 /* Build configuration list for PBXNativeTarget "Outfit Me_2" */;
 			buildPhases = (
+				6D131B4A19EC5D93F5F47860 /* [CP] Check Pods Manifest.lock */,
 				240FCB0E1D37F67400401405 /* Sources */,
 				240FCB0F1D37F67400401405 /* Frameworks */,
 				240FCB101D37F67400401405 /* Resources */,
+				F151BB937DF469782E00D2B5 /* [CP] Embed Pods Frameworks */,
+				04BD4C90C334D46827A712DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +213,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04BD4C90C334D46827A712DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D131B4A19EC5D93F5F47860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F151BB937DF469782E00D2B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		240FCB0E1D37F67400401405 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -184,8 +271,12 @@
 				240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */,
 				240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */,
 				240FCB5B1D39907F00401405 /* CollectionViewCell.swift in Sources */,
+				240FCB711D3EABE300401405 /* ParsePhotos.swift in Sources */,
 				240FCB181D37F67400401405 /* ViewController.swift in Sources */,
+				240FCB6B1D3D74E400401405 /* PhotoTakingHelper.swift in Sources */,
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
+				240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */,
+				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
@@ -300,6 +391,7 @@
 		};
 		240FCB251D37F67400401405 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -314,6 +406,7 @@
 		};
 		240FCB261D37F67400401405 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12BAEEF0D1F8BD9290A96987 /* Pods-Outfit Me_2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

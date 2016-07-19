@@ -19,9 +19,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let parsePhoto = ParsePhotos()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,11 +48,14 @@ extension ViewController: UITableViewDataSource{
         if indexPath.row == 0{
             cell.titleLabel.text = "Tops"
             cell.collectionView.dataSource = topsDataProvider
+            cell.parentViewController = self
+            
         }
             
         else if indexPath.row == 1{
             cell.titleLabel.text = "Bottoms"
             cell.collectionView.dataSource = bottomsDataProvider
+            
         }
         else if indexPath.row == 2{
             cell.titleLabel.text = "Outerwear"

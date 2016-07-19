@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let configuration = ParseClientConfiguration {
+            let APP_ID = "Outfit Me"
+            let SERVER_URL = "https://outfitme-parse-av.herokuapp.com/parse"
+            
+            $0.applicationId = APP_ID
+            $0.server = SERVER_URL
+        }
+        
+        Parse.initializeWithConfiguration(configuration)
+        
+        let acl = PFACL()
+        acl.publicReadAccess = true
+        PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
+        
+        do {
+            try PFUser.logInWithUsername("test", password: "test")
+        } catch {
+            print("Unable to log in")
+        }
+        
+        if let currentUser = PFUser.currentUser() {
+            print("\(currentUser.username!) logged in successfully")
+        } else {
+            print("No logged in user :(")
+        }
+        
         return true
     }
 

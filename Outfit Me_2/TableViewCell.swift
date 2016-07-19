@@ -39,9 +39,28 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    var parentViewController: UIViewController!
+    var photoTakingHelper: PhotoTakingHelper!
+   
     
     @IBOutlet weak var titleLabel: UILabel!
-    
+        
+    @IBAction func addPicture(sender: AnyObject) {
+        print("Add Picture Button Pressed.")
+        self.photoTakingHelper = PhotoTakingHelper(viewController: self.parentViewController!) { (image: UIImage?) in
+            print("being called")
+            TopsDataProvider.images.append(image!)
+            print("AMOUNT IN TOPS ARRAY:  \( TopsDataProvider.images.count)")
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.collectionView.reloadData()
+            })
+            
+    }
+        
+        
+        
+        
+    }
     
 //    var collectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -49,7 +68,6 @@ class TableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         collectionView.dataSource = nil
-        print("TableViewCell - prepareForReuse - \(collectionView.dataSource)")
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -57,19 +75,19 @@ class TableViewCell: UITableViewCell {
     }
     
     // MARK: UICollectionViewDataSource
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
+//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
     
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 10
-    }
+//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        
+//        return 10
+//    }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) 
-        
+//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) 
+    
         
        
             //as! UICollectionViewCell
@@ -79,6 +97,6 @@ class TableViewCell: UITableViewCell {
 //            cell.backgroundColor = UIColor.yellowColor()
 //        }
         
-        return cell
-    }
+//        return cell
+    //}
 }

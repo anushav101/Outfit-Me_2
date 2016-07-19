@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class TopsDataProvider: NSObject, UICollectionViewDataSource {
     
-    var images: [UIImage] = []
+    static var images: [UIImage] = []
     
     override init() {
         super.init()
@@ -18,10 +19,10 @@ class TopsDataProvider: NSObject, UICollectionViewDataSource {
             let image = UIImage(named: "puppy .jpg")
             let kittenImage = UIImage(named: "kitten.jpg")
             if i%2 == 0 {
-                images.append(image!)
+                TopsDataProvider.images.append(image!)
             }
             else {
-                images.append(kittenImage!)
+                TopsDataProvider.images.append(kittenImage!)
                 
             }
         }
@@ -32,12 +33,14 @@ class TopsDataProvider: NSObject, UICollectionViewDataSource {
     // MARK: UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return TopsDataProvider.images.count
     }
+
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
-        let image = images[indexPath.row]
+        let image = TopsDataProvider.images[indexPath.row]
         cell.imageView.image = image
         return cell
     }
