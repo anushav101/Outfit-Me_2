@@ -10,17 +10,14 @@ import UIKit
 import Parse
 
 class ViewController: UIViewController {
+    var categoryDataProvider = [TopsDataProvider.sharedInstance, BottomsDataProvider.sharedInstance, OuterwearDataProvider.sharedInstance, DressesDataProvider.sharedInstance, AccessoriesDataProvider.sharedInstance, ShoesDataProvider.sharedInstance]
     
-    var categoryString = ["Tops", "Bottoms", "Outerwear", "Dresses", "Accessories", "Shoes"]
     
     @IBOutlet weak var tableView: UITableView!
     var photoTakingHelper: PhotoTakingHelper!
     
-    let bottomsDataProvider = BottomsDataProvider()
-    let outerwearDataProvider = OuterwearDataProvider()
-    let dressesDataProvider = DressesDataProvider()
-    let accessoriesDataProvider = AccessoriesDataProvider()
-    let shoesDataProvider = ShoesDataProvider()
+
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +28,57 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        TopsDataProvider.sharedInstance.getAllTops { (success: Bool) in
+        TopsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+
+        BottomsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.tableView.reloadData()
                 })
             }
         }
+        
+        OuterwearDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        DressesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        AccessoriesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        ShoesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+
+
+
+
     }
 
     
@@ -63,36 +104,35 @@ extension ViewController: UITableViewDataSource{
         cell.delegate = self
         cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
         
+        
+        
+        
         if indexPath.row == 0{
-            cell.titleLabel.text = "Tops"
-            cell.collectionView.dataSource = TopsDataProvider.sharedInstance
+            
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
             
         }
         else if indexPath.row == 1{
-            cell.titleLabel.text = "Bottoms"
-            cell.collectionView.dataSource = bottomsDataProvider
             
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         }
         else if indexPath.row == 2{
-            cell.titleLabel.text = "Outerwear"
-            cell.collectionView.dataSource = outerwearDataProvider
-            
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         }
         else if indexPath.row == 3{
-            cell.titleLabel.text = "Dresses"
-            cell.collectionView.dataSource = dressesDataProvider
-            
-
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         }
         else if indexPath.row == 4{
-            cell.titleLabel.text = "Accessories"
-            cell.collectionView.dataSource = accessoriesDataProvider
-            
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         }
         else if indexPath.row == 5{
-            cell.titleLabel.text = "Shoes"
-            cell.collectionView.dataSource = shoesDataProvider
-            
+            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
+            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
         }
         
         else {
@@ -129,15 +169,15 @@ extension ViewController: TableViewCellDelegate {
             let testObject = PFObject(className: "Product")
             
             // TODO: Make this dynamic (with respect to cell row)
-            var cellValue = self.tableView.indexPathForCell(cell)!
-            print("THEEEE CELLLLL VALUEEEEE ISSSSSSSS  \(cellValue.row)")
-            testObject["category"] = self.categoryString[cellValue.row]
+            let cellValue = self.tableView.indexPathForCell(cell)!.row
+            let dataProvider = self.categoryDataProvider[cellValue]
+            testObject["category"] = dataProvider.category
             testObject["imageFile"] = imageFile
             
             testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
                     print("Object has been saved.")
-                    TopsDataProvider.sharedInstance.getAllTops({ (success: Bool) in
+                    dataProvider.getAllClothing({ (success: Bool) in
                         dispatch_async(dispatch_get_main_queue(), {
                             if let indexPath = self.tableView.indexPathForCell(cell) where success {
                                 self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

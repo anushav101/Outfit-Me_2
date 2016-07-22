@@ -151,7 +151,7 @@
                                         <rect key="frame" x="0.0" y="50" width="560" height="279"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ei3-1s-gjX" id="XTO-2E-D26">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="279"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="278.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vjv-Ov-GH8">
@@ -168,7 +168,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CollectionViewCell" id="MOu-OH-dSw" customClass="CollectionViewCell" customModule="Outfit_Me_2" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="1" width="197" height="185"/>
+                                                            <rect key="frame" x="10" y="0.5" width="197" height="185"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="185"/>
@@ -398,7 +398,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outfit Builder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-7t-9yM">
-                                <rect key="frame" x="252" y="291" width="96" height="19"/>
+                                <rect key="frame" x="252" y="290.5" width="96" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="rYG-JC-NPC"/>
                                     <constraint firstAttribute="height" constant="19.5" id="zg3-UN-lEK"/>
@@ -433,7 +433,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outfit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-Ag-8Gf">
-                                <rect key="frame" x="278" y="291" width="45" height="19"/>
+                                <rect key="frame" x="278" y="290.5" width="44.5" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44.5" id="0DI-PZ-5Wi"/>
                                     <constraint firstAttribute="height" constant="19.5" id="GVd-UN-J9b"/>

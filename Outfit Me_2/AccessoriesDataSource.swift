@@ -7,32 +7,16 @@
 //
 
 import UIKit
+import Parse
 
-class AccessoriesDataProvider: NSObject, UICollectionViewDataSource {
+class AccessoriesDataProvider: ClothingDataProvider {
     
-    var images: [UIImage] = []
     
-    override init() {
-        super.init()
-        for _ in 0..<2 {
-            let image = UIImage(named: "puppy .jpg")
-            images.append(image!)
-        }
+    override var category: String {
+        return "Accessories"
     }
     
+    static let sharedInstance = AccessoriesDataProvider()
     
-    
-    // MARK: UICollectionViewDataSource
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
-        let image = images[indexPath.row]
-        cell.imageView.image = image
-        return cell
-    }
     
 }

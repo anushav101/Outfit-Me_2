@@ -12,7 +12,7 @@ import Parse
 class ParsePhotos: PFObject, PFSubclassing {
     
     static func parseClassName() -> String {
-        return "Closet"
+        return "Product"
     }
     
     

@@ -9,64 +9,16 @@
 import UIKit
 import Parse
 
-class TopsDataProvider: NSObject {
+class TopsDataProvider: ClothingDataProvider {
+    
+    
+    override var category: String {
+        return "Tops"
+    }
     
     static let sharedInstance = TopsDataProvider()
     
-    var images: [UIImage] = []
     
-    func getAllTops(success: (Bool) -> Void) {
-        let query = PFQuery(className: "Product")
-        query.whereKey("category", equalTo: "Tops")
-        
-        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            print("objects: \(objects)")
-            print("error: \(error)")
-            
-            if let actualObjects = objects {
-                
-                self.images = []
-                
-                // TODO: Move to cellForItemAtIndexPath in collection View
-                for object in actualObjects {
-                    
-                    let userPicture = object["imageFile"] as! PFFile
-                    userPicture.getDataInBackgroundWithBlock({
-                        (imageData: NSData?, error: NSError?) -> Void in
-                        if let error = error {
-                            print(error.localizedDescription)
-                            success(false)
-                        } else {
-                            let image = UIImage(data:imageData!)
-                            self.images.append(image!)
-                            success(true)
-                        }
-                    })
-                }
-            }
-        }
     }
-}
 
-// MARK: UICollectionViewDataSource
 
-extension TopsDataProvider: UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
-        let image = images[indexPath.row]
-        
-        // insert loading logic here
-        
-        cell.imageView.image = image
-        return cell
-    }
-}

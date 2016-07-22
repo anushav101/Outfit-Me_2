@@ -6,33 +6,18 @@
 //  Copyright © 2016 MakeSchool. All rights reserved.
 //
 
-import UIKit
 
-class DressesDataProvider: NSObject, UICollectionViewDataSource {
+import UIKit
+import Parse
+
+class DressesDataProvider: ClothingDataProvider {
     
-    var images: [UIImage] = []
     
-    override init() {
-        super.init()
-        for _ in 0..<4 {
-            let image = UIImage(named: "puppy .jpg")
-            images.append(image!)
-        }
+    override var category: String {
+        return "Dresses"
     }
     
+    static let sharedInstance = DressesDataProvider()
     
-    
-    // MARK: UICollectionViewDataSource
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
-        let image = images[indexPath.row]
-        cell.imageView.image = image
-        return cell
-    }
     
 }
