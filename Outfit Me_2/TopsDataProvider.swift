@@ -7,42 +7,66 @@
 //
 
 import UIKit
+import Parse
 
-
-class TopsDataProvider: NSObject, UICollectionViewDataSource {
+class TopsDataProvider: NSObject {
     
-    static var images: [UIImage] = []
+    static let sharedInstance = TopsDataProvider()
     
-    override init() {
-        super.init()
-        for i in 0..<10 {
-            let image = UIImage(named: "puppy .jpg")
-            let kittenImage = UIImage(named: "kitten.jpg")
-            if i%2 == 0 {
-                TopsDataProvider.images.append(image!)
+    var images: [UIImage] = []
+    
+    func getAllTops(success: (Bool) -> Void) {
+        let query = PFQuery(className: "Product")
+        query.whereKey("category", equalTo: "Tops")
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if let error = error {
+                print(error.localizedDescription)
+                return
             }
-            else {
-                TopsDataProvider.images.append(kittenImage!)
+            
+            print("objects: \(objects)")
+            print("error: \(error)")
+            
+            if let actualObjects = objects {
                 
+                self.images = []
+                
+                // TODO: Move to cellForItemAtIndexPath in collection View
+                for object in actualObjects {
+                    
+                    let userPicture = object["imageFile"] as! PFFile
+                    userPicture.getDataInBackgroundWithBlock({
+                        (imageData: NSData?, error: NSError?) -> Void in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            success(false)
+                        } else {
+                            let image = UIImage(data:imageData!)
+                            self.images.append(image!)
+                            success(true)
+                        }
+                    })
+                }
             }
         }
     }
-    
-    
-    
-    // MARK: UICollectionViewDataSource
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TopsDataProvider.images.count
-    }
+}
 
-    
+// MARK: UICollectionViewDataSource
+
+extension TopsDataProvider: UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
-        let image = TopsDataProvider.images[indexPath.row]
+        let image = images[indexPath.row]
+        
+        // insert loading logic here
+        
         cell.imageView.image = image
         return cell
     }
-    
 }
