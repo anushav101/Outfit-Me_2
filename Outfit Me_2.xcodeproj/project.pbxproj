@@ -96,6 +96,7 @@
 				240FCB571D39886600401405 /* Data providers */,
 				240FCB551D396D6600401405 /* kitten.jpg */,
 				240FCB531D3969DD00401405 /* puppy .jpg */,
+				240FCB291D38094700401405 /* MyClosetViewController.swift */,
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB171D37F67400401405 /* ViewController.swift */,
 				240FCB4D1D385A9900401405 /* TableViewCell.swift */,
@@ -108,7 +109,6 @@
 				240FCB1C1D37F67400401405 /* Assets.xcassets */,
 				240FCB1E1D37F67400401405 /* LaunchScreen.storyboard */,
 				240FCB211D37F67400401405 /* Info.plist */,
-				240FCB291D38094700401405 /* MyClosetViewController.swift */,
 			);
 			path = "Outfit Me_2";
 			sourceTree = "<group>";

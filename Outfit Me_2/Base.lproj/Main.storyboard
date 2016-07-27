@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="soA-8W-aQN">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="soA-8W-aQN">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.18039215689999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -54,7 +54,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-hX-uhk">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-hX-uhk">
                                 <rect key="frame" x="0.0" y="70" width="600" height="50"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.63137254899999995" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -118,6 +118,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="360" id="idi-8m-te6"/>
                                 </constraints>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gH9-l2-Uxo">
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,8 +155,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="278.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vjv-Ov-GH8">
-                                                    <rect key="frame" x="20" y="65" width="497" height="186"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vjv-Ov-GH8">
+                                                    <rect key="frame" x="20" y="65" width="457" height="186"/>
                                                     <color key="backgroundColor" red="0.054901960784313725" green="0.13333333333333333" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="185.5" id="fQC-IK-xSA"/>
@@ -210,7 +211,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsK-wp-iIx">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsK-wp-iIx">
                                                     <rect key="frame" x="20" y="38" width="497" height="7"/>
                                                     <color key="backgroundColor" red="0.16862745100000001" green="0.63137254899999995" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -253,8 +254,8 @@
                                                         </mask>
                                                     </variation>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Dr-azW">
-                                                    <rect key="frame" x="530" y="124" width="57" height="63"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-Dr-azW">
+                                                    <rect key="frame" x="490" y="124" width="57" height="63"/>
                                                     <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="74"/>
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
@@ -305,6 +306,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="collectionView" destination="Vjv-Ov-GH8" id="m3u-SN-UV7"/>
                                             <outlet property="titleLabel" destination="lml-Sy-fgb" id="Yh0-Rv-tn1"/>
@@ -324,6 +326,17 @@
                                     <outlet property="delegate" destination="XSh-bo-Xie" id="a9b-kQ-SGz"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGe-aB-B7Y">
+                                <rect key="frame" x="508" y="142" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4OO-lT-jvO"/>
+                                    <constraint firstAttribute="width" constant="30" id="ntH-pH-icZ"/>
+                                </constraints>
+                                <state key="normal" image="trash"/>
+                                <connections>
+                                    <action selector="deleteClothing:" destination="XSh-bo-Xie" eventType="touchUpInside" id="WxS-vz-NjB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -336,6 +349,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="p4s-3L-HEb" secondAttribute="trailing" constant="402" id="9J9-gD-0e9"/>
                             <constraint firstItem="Ga0-hX-uhk" firstAttribute="top" secondItem="soA-8W-aQN" secondAttribute="bottom" id="CL7-A1-Esh"/>
                             <constraint firstItem="p4s-3L-HEb" firstAttribute="leading" secondItem="4Ld-yV-xVs" secondAttribute="leading" constant="20" id="Cd6-u6-fGn"/>
+                            <constraint firstItem="QGe-aB-B7Y" firstAttribute="leading" secondItem="p4s-3L-HEb" secondAttribute="trailing" constant="130" id="Dkf-Dd-DwT"/>
+                            <constraint firstItem="QGe-aB-B7Y" firstAttribute="top" secondItem="Ga0-hX-uhk" secondAttribute="bottom" constant="17" id="Gqg-QX-7fX"/>
                             <constraint firstItem="soA-8W-aQN" firstAttribute="leading" secondItem="4Ld-yV-xVs" secondAttribute="leadingMargin" constant="-20" id="Oas-hI-oMG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="soA-8W-aQN" secondAttribute="trailing" constant="-20" id="QoJ-Zw-pjz"/>
                             <constraint firstItem="g8A-6A-lab" firstAttribute="top" secondItem="p4s-3L-HEb" secondAttribute="bottom" constant="1" id="RxI-zu-aJF"/>
@@ -383,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFB-Oe-56c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="729"/>
+            <point key="canvasLocation" x="890" y="723"/>
         </scene>
         <!--Outfit Builder -->
         <scene sceneID="htp-Ga-cfg">
@@ -479,5 +494,6 @@
         <image name="camera" width="40" height="30"/>
         <image name="home" width="38" height="36"/>
         <image name="people" width="42" height="42"/>
+        <image name="trash" width="384" height="384"/>
     </resources>
 </document>

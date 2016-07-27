@@ -16,6 +16,9 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+
+    
+    
     var delegate: TableViewCellDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!

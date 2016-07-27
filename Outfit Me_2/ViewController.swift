@@ -16,6 +16,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var photoTakingHelper: PhotoTakingHelper!
     
+  
+    @IBAction func deleteClothing(sender: AnyObject) {
+        
+        for object in objectsToDelete {
+            let query = PFQuery(className: "Product")
+            query.whereKey("objectId", equalTo: (object.objectId)!)
+            query.findObjectsInBackgroundWithBlock {
+                (objects:[PFObject]?, error: NSError?) -> Void in
+                for object in objects! {
+                    object.deleteEventually()
+                }
+            }
+            
+        }
+        
+        let triggerTime = (Int64(NSEC_PER_SEC) * 2)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+            print("DELAYED RELOAD TABLE VIEWS")
+        })
+        
+        
+        
+    }
 
   
     
@@ -28,6 +52,8 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         TopsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
                 dispatch_async(dispatch_get_main_queue(), {
@@ -103,42 +129,9 @@ extension ViewController: UITableViewDataSource{
         let cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("Categories", forIndexPath: indexPath) as! TableViewCell
         cell.delegate = self
         cell.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        
-        
-        
-        
-        if indexPath.row == 0{
-            
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-            
-        }
-        else if indexPath.row == 1{
-            
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-        }
-        else if indexPath.row == 2{
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-        }
-        else if indexPath.row == 3{
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-        }
-        else if indexPath.row == 4{
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-        }
-        else if indexPath.row == 5{
-            cell.titleLabel.text = categoryDataProvider[indexPath.row].category
-            cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
-        }
-        
-        else {
-        }
-        
-        print("ViewController - cellForRowAtIndexPath - \(cell.collectionView.dataSource)")
+        cell.titleLabel.text = categoryDataProvider[indexPath.row].category     
+        cell.collectionView.dataSource = categoryDataProvider[indexPath.row]
+        cell.collectionView.delegate = categoryDataProvider[indexPath.row]
         return cell
 
         
@@ -173,6 +166,7 @@ extension ViewController: TableViewCellDelegate {
             let dataProvider = self.categoryDataProvider[cellValue]
             testObject["category"] = dataProvider.category
             testObject["imageFile"] = imageFile
+            testObject["user"] = PFUser.currentUser()
             
             testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
