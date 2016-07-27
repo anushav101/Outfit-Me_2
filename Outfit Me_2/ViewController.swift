@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var photoTakingHelper: PhotoTakingHelper!
     
-  
+    
     @IBAction func deleteClothing(sender: AnyObject) {
         
         for object in objectsToDelete {
@@ -31,10 +31,57 @@ class ViewController: UIViewController {
             
         }
         
-        let triggerTime = (Int64(NSEC_PER_SEC) * 2)
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
-            self.tableView.reloadData()
-            print("DELAYED RELOAD TABLE VIEWS")
+            TopsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+            BottomsDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+            OuterwearDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+            DressesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+            AccessoriesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+            ShoesDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+                if success {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            
+
         })
         
         
