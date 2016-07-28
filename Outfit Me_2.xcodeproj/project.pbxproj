@@ -29,6 +29,7 @@
 		240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB6E1D3EA75500401405 /* ErrorHandling.swift */; };
 		240FCB711D3EABE300401405 /* ParsePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FCB701D3EABE300401405 /* ParsePhotos.swift */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
+		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		240FCB6E1D3EA75500401405 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		240FCB701D3EABE300401405 /* ParsePhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsePhotos.swift; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
+		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
 		691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.debug.xcconfig"; sourceTree = "<group>"; };
 		92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outfit_Me_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,18 +96,19 @@
 			isa = PBXGroup;
 			children = (
 				240FCB571D39886600401405 /* Data providers */,
-				240FCB551D396D6600401405 /* kitten.jpg */,
-				240FCB531D3969DD00401405 /* puppy .jpg */,
-				240FCB291D38094700401405 /* MyClosetViewController.swift */,
+				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
+				24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */,
 				240FCB171D37F67400401405 /* ViewController.swift */,
+				240FCB291D38094700401405 /* MyClosetViewController.swift */,
 				240FCB4D1D385A9900401405 /* TableViewCell.swift */,
 				240FCB701D3EABE300401405 /* ParsePhotos.swift */,
-				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB6A1D3D74E400401405 /* PhotoTakingHelper.swift */,
 				240FCB6C1D3EA1E100401405 /* ParseLoginHelper.swift */,
 				240FCB6E1D3EA75500401405 /* ErrorHandling.swift */,
 				240FCB5A1D39907F00401405 /* CollectionViewCell.swift */,
+				240FCB531D3969DD00401405 /* puppy .jpg */,
+				240FCB551D396D6600401405 /* kitten.jpg */,
 				240FCB1C1D37F67400401405 /* Assets.xcassets */,
 				240FCB1E1D37F67400401405 /* LaunchScreen.storyboard */,
 				240FCB211D37F67400401405 /* Info.plist */,
@@ -284,6 +287,7 @@
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
+				24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */,
 				240FCB5D1D399E2600401405 /* BottomsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
