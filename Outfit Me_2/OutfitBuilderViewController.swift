@@ -11,6 +11,7 @@ import Parse
 
 class OutfitBuilderViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     var categoryDataProvider = [TopsDataProvider.sharedInstance, BottomsDataProvider.sharedInstance, OuterwearDataProvider.sharedInstance, DressesDataProvider.sharedInstance, AccessoriesDataProvider.sharedInstance, ShoesDataProvider.sharedInstance]
 
 
@@ -19,10 +20,23 @@ class OutfitBuilderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        OutfitBuilderDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // D/Users/anushavenkatesan/Desktop/XCode Projects/Outfit Me_2/Outfit Me_2/OutfitBuilderTableViewCell.swiftispose of any resources that can be recreated.
     }
     
 
@@ -48,19 +62,16 @@ extension OutfitBuilderViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OutfitCategories", forIndexPath: indexPath)
+        let cell: OutfitBuilderTableViewCell = tableView.dequeueReusableCellWithIdentifier("OutfitCategories", forIndexPath: indexPath) as! OutfitBuilderTableViewCell
+       
+        cell.collectionView.dataSource = OutfitBuilderDataProvider.sharedInstance
+        
+        
         return cell
         
         
     }
     
-    //    override func tableView(tableView: UITableView,
-    //                            willDisplayCell cell: UITableViewCell,
-    //                                            forRowAtIndexPath indexPath: NSIndexPath) {
-    //
-    //        guard let tableViewCell = cell as? TableViewCell else { return }
-    //
-    //        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
-    //    }
+
 }
 
