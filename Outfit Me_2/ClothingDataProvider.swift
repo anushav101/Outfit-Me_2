@@ -14,7 +14,6 @@ var objectsToDelete: [PFObject] = []
 class ClothingDataProvider : NSObject{
     
     
-//    var images: [UIImage] = []
     var storedObjects: [PFObject] = [] {
         didSet {
             print("did set storedObjects: \(storedObjects)")
@@ -113,9 +112,9 @@ extension ClothingDataProvider: UICollectionViewDataSource, UICollectionViewDele
 //        cell!.layer.borderColor = UIColor.grayColor().CGColor
         cell!.layer.borderColor = UIColor.darkGrayColor().CGColor
         objectsToDelete.append(self.storedObjects[indexPath.row])
-        print(objectsToDelete)
-        print("THIS IS COLLECTION VIEW INDEX!")
-        print(indexPath.row)
+//        print(objectsToDelete)
+//        print("THIS IS COLLECTION VIEW INDEX!")
+//        print(indexPath.row)
         }
         
     }

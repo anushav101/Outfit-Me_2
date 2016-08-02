@@ -6,4 +6,17 @@
 //  Copyright © 2016 MakeSchool. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Parse
+
+class BottomsOutfitProvider: OutfitBuilderDataProvider {
+    
+    override var category: String {
+        return "Bottoms"
+    }
+    
+    static let sharedInstance = BottomsOutfitProvider()
+    
+    
+    
+}

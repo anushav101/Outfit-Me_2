@@ -14,7 +14,7 @@ var objectsToOutfit: [PFObject] = []
 
 class OutfitBuilderDataProvider: NSObject {
     
-    static let sharedInstance = OutfitBuilderDataProvider()
+//    static let sharedInstance = OutfitBuilderDataProvider()
     
     
     
@@ -25,7 +25,7 @@ class OutfitBuilderDataProvider: NSObject {
     }
     
     var category: String {
-        return "Tops"
+        return ""
     }
 
     
@@ -49,7 +49,7 @@ class OutfitBuilderDataProvider: NSObject {
 }
 
 
-extension OutfitBuilderDataProvider: UICollectionViewDataSource {
+extension OutfitBuilderDataProvider: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -61,15 +61,45 @@ extension OutfitBuilderDataProvider: UICollectionViewDataSource {
        
         cell.setTheImageView(storedObjects[indexPath.row])
         
-//        cell.setTheImageView(storedObjects[indexPath.row])
+
         
-//        if objectsToDelete.contains(storedObjects[indexPath.row]){
-//            cell.layer.borderWidth = 6.0
-//            cell.layer.borderColor = UIColor.darkGrayColor().CGColor
-//        }
+        if objectsToOutfit.contains(storedObjects[indexPath.row]){
+            cell.layer.borderWidth = 6.0
+            cell.layer.borderColor = UIColor.cyanColor().CGColor
+        }
         
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        
+        if objectsToOutfit.contains(storedObjects[indexPath.row]) && (cell!.layer.borderWidth == 6) {
+            cell!.layer.borderWidth = 0
+            var i = -1
+            for object in objectsToOutfit {
+                i += 1
+                if self.storedObjects[indexPath.row] == object {
+                    objectsToOutfit.removeAtIndex(i)
+                }
+            }
+            
+        }
+        else {
+            
+            cell!.layer.borderWidth = 6.0
+            //        cell!.layer.borderColor = UIColor.grayColor().CGColor
+            cell!.layer.borderColor = UIColor.cyanColor().CGColor
+            objectsToOutfit.append(self.storedObjects[indexPath.row])
+            print(objectsToOutfit)
+            print("THIS IS COLLECTION VIEW INDEX!")
+            print(indexPath.row)
+        }
+        
+    }
+    
 }
 
 

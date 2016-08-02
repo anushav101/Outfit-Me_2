@@ -15,5 +15,8 @@ class TopsOutfitProvider: OutfitBuilderDataProvider {
         return "Tops"
     }
     
-//    static let sharedInstance = TopsDataProvider()
+  static let sharedInstance = TopsOutfitProvider()
+    
+    
+    
 }

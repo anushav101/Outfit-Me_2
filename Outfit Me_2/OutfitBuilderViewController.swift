@@ -12,7 +12,7 @@ import Parse
 class OutfitBuilderViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var categoryDataProvider = [TopsDataProvider.sharedInstance, BottomsDataProvider.sharedInstance, OuterwearDataProvider.sharedInstance, DressesDataProvider.sharedInstance, AccessoriesDataProvider.sharedInstance, ShoesDataProvider.sharedInstance]
+    var categoryOutfitProvider = [TopsOutfitProvider.sharedInstance, BottomsOutfitProvider.sharedInstance, OuterwearOutfitProvider.sharedInstance, DressesOutfitProvider.sharedInstance, AccessoriesOutfitProvider.sharedInstance, ShoesOutfitProvider.sharedInstance]
 
 
     override func viewDidLoad() {
@@ -24,7 +24,47 @@ class OutfitBuilderViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        OutfitBuilderDataProvider.sharedInstance.getAllClothing { (success: Bool) in
+        TopsOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        BottomsOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        OuterwearOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        DressesOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        AccessoriesOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+        ShoesOutfitProvider.sharedInstance.getAllClothing { (success: Bool) in
             if success {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
@@ -64,9 +104,8 @@ extension OutfitBuilderViewController: UITableViewDataSource{
     {
         let cell: OutfitBuilderTableViewCell = tableView.dequeueReusableCellWithIdentifier("OutfitCategories", forIndexPath: indexPath) as! OutfitBuilderTableViewCell
        
-        cell.collectionView.dataSource = OutfitBuilderDataProvider.sharedInstance
-        
-        
+        cell.collectionView.dataSource = self.categoryOutfitProvider[indexPath.row]
+        cell.collectionView.delegate = self.categoryOutfitProvider[indexPath.row]
         return cell
         
         
