@@ -39,6 +39,9 @@
 		2414862A1D4C80A6005E0E95 /* ShoesOutfitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */; };
 		244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244251841D42D87D007430BD /* ClothingDataProvider.swift */; };
 		24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */; };
+		24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */; };
+		24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */; };
+		24B715CD1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		241486291D4C80A6005E0E95 /* ShoesOutfitProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoesOutfitProvider.swift; sourceTree = "<group>"; };
 		244251841D42D87D007430BD /* ClothingDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothingDataProvider.swift; sourceTree = "<group>"; };
 		24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitBuilderViewController.swift; sourceTree = "<group>"; };
+		24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
+		24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitTableViewCell.swift; sourceTree = "<group>"; };
+		24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
 		691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.debug.xcconfig"; sourceTree = "<group>"; };
 		92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outfit_Me_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,9 +122,12 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
+				24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */,
+				24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */,
+				24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */,
+				2414861D1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift */,
 				24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */,
 				241486191D4C1680005E0E95 /* OutfitBuilderTableViewCell.swift */,
-				2414861D1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift */,
 				240FCB171D37F67400401405 /* ViewController.swift */,
 				240FCB4D1D385A9900401405 /* TableViewCell.swift */,
 				240FCB5A1D39907F00401405 /* CollectionViewCell.swift */,
@@ -305,6 +314,7 @@
 				244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */,
 				240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */,
 				240FCB631D39A1D800401405 /* AccessoriesDataSource.swift in Sources */,
+				24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */,
 				240FCB5B1D39907F00401405 /* CollectionViewCell.swift in Sources */,
 				240FCB711D3EABE300401405 /* ParsePhotos.swift in Sources */,
 				240FCB181D37F67400401405 /* ViewController.swift in Sources */,
@@ -318,6 +328,8 @@
 				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
+				24B715CD1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift in Sources */,
+				24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */,
 				241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
 				2414861E1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift in Sources */,

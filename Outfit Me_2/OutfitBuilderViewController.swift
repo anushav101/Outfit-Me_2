@@ -118,12 +118,19 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
         
         let testObject = PFObject(className: "Outfits")
         for outfits in objectsToOutfit {
-            testObject.addObject(outfits, forKey: "images")
+            let outfitImage = outfits["imageFile"]
+            testObject.addObject(outfitImage, forKey: "images")
+            
+            
         }
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
                 print("Object has been saved.")
                 //add in function that will clear highlights
+                
+                objectsToOutfit = []
+                self.tableView.reloadData()
+                
                 //segue to outfits
             }
             else {

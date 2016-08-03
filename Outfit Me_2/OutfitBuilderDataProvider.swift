@@ -44,7 +44,7 @@ class OutfitBuilderDataProvider: NSObject {
             
             success(true)
         }
-        print("STORED OBJECTS: \(storedObjects)")
+//        print("STORED OBJECTS: \(storedObjects)")
     }
 }
 
@@ -94,9 +94,9 @@ extension OutfitBuilderDataProvider: UICollectionViewDataSource, UICollectionVie
             //        cell!.layer.borderColor = UIColor.grayColor().CGColor
             cell!.layer.borderColor = UIColor.cyanColor().CGColor
             objectsToOutfit.append(self.storedObjects[indexPath.row])
-            print(objectsToOutfit)
-            print("THIS IS COLLECTION VIEW INDEX!")
-            print(indexPath.row)
+//            print(objectsToOutfit)
+//            print("THIS IS COLLECTION VIEW INDEX!")
+//            print(indexPath.row)
         }
         
     }
