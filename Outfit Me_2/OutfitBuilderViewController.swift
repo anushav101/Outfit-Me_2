@@ -92,7 +92,7 @@ class OutfitBuilderViewController: UIViewController {
 
 }
 
-extension OutfitBuilderViewController: UITableViewDataSource{
+extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegate{
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -110,7 +110,28 @@ extension OutfitBuilderViewController: UITableViewDataSource{
         
         
     }
+   
     
+  
+    @IBAction func createOutfit(sender: AnyObject) {
+        
+        
+        let testObject = PFObject(className: "Outfits")
+        for outfits in objectsToOutfit {
+            testObject.addObject(outfits, forKey: "images")
+        }
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                //add in function that will clear highlights
+                //segue to outfits
+            }
+            else {
+                print(error)
+            }
+        }
+        
+    }
 
 }
 

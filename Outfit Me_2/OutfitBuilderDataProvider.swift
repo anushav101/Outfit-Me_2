@@ -71,6 +71,7 @@ extension OutfitBuilderDataProvider: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
