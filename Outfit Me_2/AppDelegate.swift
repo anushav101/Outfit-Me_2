@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let configuration = ParseClientConfiguration {
-            let APP_ID = "Outfit Me"
+            let APP_ID = "OutfitMe"
             let SERVER_URL = "https://outfitme-parse-av.herokuapp.com/parse"
             
             $0.applicationId = APP_ID
