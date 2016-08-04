@@ -15,6 +15,7 @@ class OutfitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+  
     
     override func viewWillAppear(animated: Bool) {
         let query = PFQuery(className: "Outfits")
@@ -69,23 +70,35 @@ extension OutfitViewController: UITableViewDataSource {
            print("NOTE DELETED !!!!!!!")
             let query = PFQuery(className: "Outfits")
             let object = storedObjects[indexPath.row]
+            storedObjects.removeAtIndex(indexPath.row)
             query.whereKey("objectId", equalTo: object.objectId!)
             query.findObjectsInBackgroundWithBlock {
                 (objects: [PFObject]?, error: NSError?) -> Void in
                 for object in objects! {
                     object.deleteEventually()
+                    
                 }
             }
             
             
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+                
+            })
+            
+//            let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+//                
+//                
+//               self.tableView.reloadData()
+//                print("delete this!!!")
+//                
+//            })
+            
         }
         
-//        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
-//            
-//            self.tableView.reloadData()
-//            
-//        })
+        
         
         
         
