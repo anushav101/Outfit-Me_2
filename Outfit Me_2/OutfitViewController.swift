@@ -1,5 +1,5 @@
-//
-//  OutfitViewController.swift
+///Users/anushavenkatesan/Desktop/XCode Projects/Outfit Me_2/Outfit Me_2/OutfitBuilderViewController.swift
+//  OutfitViewControll/Users/anushavenkatesan/Desktop/XCode Projects/Outfit Me_2/Outfit Me_2/OutfitBuilderCollectionViewCell.swifter.swift
 //  Outfit Me_2
 //
 //  Created by Anusha Venkatesan on 8/3/16.
@@ -16,10 +16,19 @@ class OutfitViewController: UIViewController {
         super.viewDidLoad()
     }
   
+    @IBAction func createNewOutfit(sender: UIButton) {
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitBuilderViewController") // again change to your view
+        self.showViewController(vc as! OutfitBuilderViewController, sender: vc) // change again
+        
+
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
         let query = PFQuery(className: "Outfits")
         query.orderByAscending("createdAt")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error:  NSError?) -> Void in
             if let error = error {
                 print(error.localizedDescription)
@@ -56,8 +65,9 @@ extension OutfitViewController: UITableViewDataSource {
         let cell: OutfitTableViewCell = tableView.dequeueReusableCellWithIdentifier("Outfits", forIndexPath: indexPath) as! OutfitTableViewCell
         
         var object = storedObjects[indexPath.row]
-        
+        if (object["images"] != nil) {
         cell.collectionImages = object["images"] as! [PFFile]
+        }
         print(cell.collectionImages)
         cell.outfitNumber.text = "Outfit # \(indexPath.row + 1)"
         

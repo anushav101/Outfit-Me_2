@@ -112,11 +112,17 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
     }
    
     
+    @IBAction func cancel(sender: AnyObject) {
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitViewController") // again change to your view
+        self.showViewController(vc as! OutfitViewController, sender: vc) // change again
+        
+    }
   
     @IBAction func createOutfit(sender: AnyObject) {
         
         
         let testObject = PFObject(className: "Outfits")
+        testObject["user"] = PFUser.currentUser()
         for outfits in objectsToOutfit {
             let outfitImage = outfits["imageFile"]
             testObject.addObject(outfitImage, forKey: "images")
@@ -137,6 +143,10 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
                 print(error)
             }
         }
+        
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitViewController") // again change to your view
+        self.showViewController(vc as! OutfitViewController, sender: vc) // change again
         
     }
 

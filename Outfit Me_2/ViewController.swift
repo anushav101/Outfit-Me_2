@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
 
     
+    @IBAction func logOut(sender: UIButton) {
+        PFUser.logOut()
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") // again change to your view
+        self.showViewController(vc as! LoginViewController, sender: vc) // change again
+    }
     
     @IBAction func cancelPressed(sender: UIButton) {
         print("HI")
@@ -52,6 +57,7 @@ class ViewController: UIViewController {
         for object in objectsToDelete {
             let query = PFQuery(className: "Product")
             query.whereKey("objectId", equalTo: (object.objectId)!)
+           
             query.findObjectsInBackgroundWithBlock {
                 (objects:[PFObject]?, error: NSError?) -> Void in
                 for object in objects! {
@@ -172,7 +178,7 @@ class ViewController: UIViewController {
         // Customize the button in the modal view
         gotitButton.layer.cornerRadius = 10
         gotitButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        gotitButton.backgroundColor = UIColor(colorLiteralRed: 0/255, green: 153/255, blue: 255/255, alpha: 0.75)
+        gotitButton.backgroundColor = UIColor(colorLiteralRed: 255/255, green: 38/255, blue: 97/255, alpha: 0.75)
         
         // Customize the message label on the modal
        
@@ -180,7 +186,8 @@ class ViewController: UIViewController {
         
         cancelButton.layer.cornerRadius = 10
         cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        cancelButton.backgroundColor = UIColor(colorLiteralRed: 0/255, green: 153/255, blue: 255/255, alpha: 0.75)
+        cancelButton.backgroundColor = UIColor(colorLiteralRed: 38/255, green: 146/255, blue: 142/255, alpha: 0.75)
+        
 
         
     }

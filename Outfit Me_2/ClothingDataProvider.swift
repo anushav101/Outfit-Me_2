@@ -26,6 +26,7 @@ class ClothingDataProvider : NSObject{
     
     func getAllClothing(success: (Bool) -> Void) {
         let query = PFQuery(className: "Product")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
         query.orderByAscending("createdAt")
         query.whereKey("category", equalTo: category)
         
