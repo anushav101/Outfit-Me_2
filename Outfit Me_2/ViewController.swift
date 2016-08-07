@@ -95,7 +95,8 @@ class ViewController: UIViewController {
         let parsePhoto = ParsePhotos()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+      
+    
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -204,8 +205,11 @@ extension ViewController: TableViewCellDelegate {
                 return
             }
             
-            let imageData = UIImageJPEGRepresentation(image, 0.8)!
-            let imageFile = PFFile(name: "image.jpg", data: imageData)!
+//            let imageData = UIImageJPEGRepresentation(image, 0.8)!
+            let imageData = UIImageJPEGRepresentation(UIImage(named:"trash")!, 0.8)!
+            do {
+            let imageFile = try PFFile(name: "image.jpg", data: imageData, contentType: "image/jpeg")
+            
             let testObject = PFObject(className: "Product")
             
             // TODO: Make this dynamic (with respect to cell row)
@@ -232,7 +236,10 @@ extension ViewController: TableViewCellDelegate {
                     print(error)
                 }
             }
- 
+                
+            } catch {
+                print("there was an error with image upload")
+            }
         }
     }
 }

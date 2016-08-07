@@ -392,7 +392,7 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="bedroom-black-closed-closet-for-clothes" id="FGn-Bg-Ehr">
-                        <inset key="imageInsets" minX="-3" minY="5" maxX="-4" maxY="-9"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="g8A-6A-lab" id="J5o-Vj-w8n"/>
@@ -627,7 +627,7 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="clothes-hanger" id="WEg-ow-vsf">
-                        <inset key="imageInsets" minX="-3" minY="6" maxX="7" maxY="-10"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="2Wm-Nf-CIS" id="mKg-05-P8Y"/>
@@ -671,17 +671,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Kx8-T0-bJG"/>
-                                        <exclude reference="afb-p1-LPB"/>
-                                        <exclude reference="CS6-Lz-Ez1"/>
-                                        <exclude reference="UWC-7m-oec"/>
-                                        <exclude reference="gr4-AK-OBW"/>
+                                        <exclude reference="5k9-Ne-CkL"/>
                                         <exclude reference="6kp-qr-Eag"/>
+                                        <exclude reference="CS6-Lz-Ez1"/>
                                         <exclude reference="FYV-Re-kK2"/>
+                                        <exclude reference="HhY-WI-WOI"/>
+                                        <exclude reference="Kx8-T0-bJG"/>
+                                        <exclude reference="UWC-7m-oec"/>
+                                        <exclude reference="afb-p1-LPB"/>
+                                        <exclude reference="gr4-AK-OBW"/>
                                         <exclude reference="m2N-Mx-a9a"/>
                                         <exclude reference="qOZ-m3-Kt9"/>
-                                        <exclude reference="HhY-WI-WOI"/>
-                                        <exclude reference="5k9-Ne-CkL"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -707,17 +707,17 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="OWY-zP-869"/>
+                                        <exclude reference="4lL-p5-M1u"/>
+                                        <exclude reference="8Kx-wE-Noy"/>
                                         <exclude reference="AM9-uT-WKD"/>
                                         <exclude reference="FI3-Jd-wi0"/>
-                                        <exclude reference="8Kx-wE-Noy"/>
-                                        <exclude reference="pam-UY-sEb"/>
-                                        <exclude reference="Qit-Aq-OPI"/>
-                                        <exclude reference="sgS-xo-a4w"/>
-                                        <exclude reference="WzE-8l-rx2"/>
-                                        <exclude reference="4lL-p5-M1u"/>
                                         <exclude reference="MG9-Sw-r7x"/>
+                                        <exclude reference="OWY-zP-869"/>
+                                        <exclude reference="Qit-Aq-OPI"/>
+                                        <exclude reference="WzE-8l-rx2"/>
                                         <exclude reference="l1z-Od-utx"/>
+                                        <exclude reference="pam-UY-sEb"/>
+                                        <exclude reference="sgS-xo-a4w"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -735,11 +735,11 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="bJ7-6u-XNt"/>
-                                        <exclude reference="S3j-Hl-c35"/>
                                         <exclude reference="KRz-rb-8nu"/>
-                                        <exclude reference="gvd-7Z-9eB"/>
+                                        <exclude reference="S3j-Hl-c35"/>
+                                        <exclude reference="bJ7-6u-XNt"/>
                                         <exclude reference="gsg-Fj-nzI"/>
+                                        <exclude reference="gvd-7Z-9eB"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -859,7 +859,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="clothes-rack" id="bfO-cV-tGF">
-                        <inset key="imageInsets" minX="1" minY="21" maxX="13" maxY="5"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="1me-KI-VaT" id="jwC-li-mCz"/>

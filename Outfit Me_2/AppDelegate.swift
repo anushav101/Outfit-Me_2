@@ -43,6 +43,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("No logged in user :(")
         }
         
+        
+        
+        //
+        
+        let imageData = UIImageJPEGRepresentation(UIImage(named:"trash")!, 0.8)!
+        let imageFile = PFFile(name: "image.jpg", data: imageData)
+        
+        let testObject = PFObject(className: "Product")
+        
+        // TODO: Make this dynamic (with respect to cell row)
+        //        let cellValue = self.tableView.indexPathForCell(cell)!.row
+        //        let dataProvider = self.categoryDataProvider[cellValue]
+        testObject["category"] = "Top"
+        testObject["imageFile"] = imageFile
+        testObject["user"] = PFUser.currentUser()
+        
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Object has been saved.")
+                //                dataProvider.getAllClothing({ (success: Bool) in
+                //                    dispatch_async(dispatch_get_main_queue(), {
+                //                        if let indexPath = self.tableView.indexPathForCell(cell) where success {
+                //                            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                //                        }
+                //                    })
+                //                })
+                //                
+                
+            }
+            else {
+                print(error)
+            }
+        }
+        
+        
+        
+        
+        
+        
         return true
     }
 
