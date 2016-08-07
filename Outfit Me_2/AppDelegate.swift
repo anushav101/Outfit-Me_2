@@ -31,20 +31,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         acl.publicReadAccess = true
         PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
         
-        do {
-            try PFUser.logInWithUsername("test", password: "test")
-        } catch {
-            print("Unable to log in")
+      
+        
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        else {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
         }
         
-        if let currentUser = PFUser.currentUser() {
-            print("\(currentUser.username!) logged in successfully")
-        } else {
-            print("No logged in user :(")
-        }
         
         
-        
+<<<<<<< HEAD
         //
         
         let imageData = UIImageJPEGRepresentation(UIImage(named:"trash")!, 0.8)!
@@ -82,6 +96,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+=======
+
+>>>>>>> origin/master
         return true
     }
 

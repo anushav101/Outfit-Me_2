@@ -10,6 +10,10 @@ target ‘Outfit Me_2’ do
   pod 'Parse'
   pod 'ParseFacebookUtilsV4'
   pod 'ParseUI'
+  pod ‘FBSDKCoreKit’
+  pod ‘FBSDKLoginKit’
+  pod ‘FBSDKShareKit’
+
 
  # target ‘Outfit Me_2Tests’ do
   #  inherit! :search_paths
