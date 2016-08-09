@@ -42,6 +42,10 @@
 		24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */; };
 		24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */; };
 		24B715CD1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */; };
+		24B715D11D55109C00D9F3D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B715D01D55109C00D9F3D2 /* LoginViewController.swift */; };
+		24D8A0F41D59714C0004356B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F31D59714B0004356B /* FeedViewController.swift */; };
+		24D8A0F61D597AAE0004356B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F51D597AAE0004356B /* FeedTableViewCell.swift */; };
+		24D8A0F81D59A0A20004356B /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
 		24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitTableViewCell.swift; sourceTree = "<group>"; };
 		24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
+		24B715D01D55109C00D9F3D2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		24D8A0F31D59714B0004356B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		24D8A0F51D597AAE0004356B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		691BA2FB049B510D0816E0D3 /* Pods-Outfit Me_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outfit Me_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Outfit Me_2/Pods-Outfit Me_2.debug.xcconfig"; sourceTree = "<group>"; };
 		92A3BCC58D4006EC6722066B /* Pods_Outfit_Me_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outfit_Me_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,9 +130,13 @@
 				240FCB151D37F67400401405 /* AppDelegate.swift */,
 				240FCB191D37F67400401405 /* Main.storyboard */,
 				240FCB571D39886600401405 /* Data providers */,
+				24D8A0F31D59714B0004356B /* FeedViewController.swift */,
+				24D8A0F51D597AAE0004356B /* FeedTableViewCell.swift */,
+				24D8A0F71D59A0A20004356B /* FeedCollectionViewCell.swift */,
 				24B715C81D52704F00D9F3D2 /* OutfitViewController.swift */,
 				24B715CA1D527C2D00D9F3D2 /* OutfitTableViewCell.swift */,
 				24B715CC1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift */,
+				24B715D01D55109C00D9F3D2 /* LoginViewController.swift */,
 				2414861D1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift */,
 				24599E831D4A98C800DDDCB6 /* OutfitBuilderViewController.swift */,
 				241486191D4C1680005E0E95 /* OutfitBuilderTableViewCell.swift */,
@@ -310,6 +322,7 @@
 			files = (
 				240FCB2A1D38094700401405 /* MyClosetViewController.swift in Sources */,
 				240FCB4E1D385A9900401405 /* TableViewCell.swift in Sources */,
+				24D8A0F81D59A0A20004356B /* FeedCollectionViewCell.swift in Sources */,
 				2414861A1D4C1680005E0E95 /* OutfitBuilderTableViewCell.swift in Sources */,
 				244251851D42D87D007430BD /* ClothingDataProvider.swift in Sources */,
 				240FCB611D39A08E00401405 /* DressesDataProvider.swift in Sources */,
@@ -317,6 +330,7 @@
 				24B715CB1D527C2D00D9F3D2 /* OutfitTableViewCell.swift in Sources */,
 				240FCB5B1D39907F00401405 /* CollectionViewCell.swift in Sources */,
 				240FCB711D3EABE300401405 /* ParsePhotos.swift in Sources */,
+				24D8A0F61D597AAE0004356B /* FeedTableViewCell.swift in Sources */,
 				240FCB181D37F67400401405 /* ViewController.swift in Sources */,
 				240FCB6B1D3D74E400401405 /* PhotoTakingHelper.swift in Sources */,
 				241486201D4C8048005E0E95 /* TopsOutfitProvider.swift in Sources */,
@@ -326,11 +340,13 @@
 				240FCB591D39893D00401405 /* TopsDataProvider.swift in Sources */,
 				240FCB6D1D3EA1E100401405 /* ParseLoginHelper.swift in Sources */,
 				240FCB6F1D3EA75500401405 /* ErrorHandling.swift in Sources */,
+				24B715D11D55109C00D9F3D2 /* LoginViewController.swift in Sources */,
 				240FCB651D39A24600401405 /* ShoesDataProvider.swift in Sources */,
 				240FCB5F1D399F5700401405 /* OuterwearDataSource.swift in Sources */,
 				24B715CD1D52A38400D9F3D2 /* OutfitCollectionViewCell.swift in Sources */,
 				24B715C91D52704F00D9F3D2 /* OutfitViewController.swift in Sources */,
 				241486281D4C8096005E0E95 /* AccessoriesDataProvider.swift in Sources */,
+				24D8A0F41D59714C0004356B /* FeedViewController.swift in Sources */,
 				240FCB161D37F67400401405 /* AppDelegate.swift in Sources */,
 				2414861E1D4C331A005E0E95 /* OutfitBuilderCollectionViewCell.swift in Sources */,
 				24599E841D4A98C800DDDCB6 /* OutfitBuilderViewController.swift in Sources */,

@@ -117,6 +117,8 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
         
         
         let testObject = PFObject(className: "Outfits")
+        testObject.ACL?.publicWriteAccess = true
+        testObject["user"] = PFUser.currentUser()
         for outfits in objectsToOutfit {
             let outfitImage = outfits["imageFile"]
             testObject.addObject(outfitImage, forKey: "images")
@@ -126,6 +128,10 @@ extension OutfitBuilderViewController: UITableViewDataSource, UITableViewDelegat
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
                 print("Object has been saved.")
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("OutfitViewController") // again change to your view
+                self.navigationController?.pushViewController(vc as! OutfitViewController, animated: true)
+//                self.showViewController(vc as! OutfitViewController, sender: vc) // change again
+
                 //add in function that will clear highlights
                 
                 objectsToOutfit = []

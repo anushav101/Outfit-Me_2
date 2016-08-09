@@ -28,6 +28,7 @@ class ClothingDataProvider : NSObject{
         let query = PFQuery(className: "Product")
         query.orderByAscending("createdAt")
         query.whereKey("category", equalTo: category)
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
         
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if let error = error {
