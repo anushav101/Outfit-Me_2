@@ -1,6 +1,0 @@
-framework module Pods_Outfit_Me_2 {
-  umbrella header "Pods-Outfit Me_2-umbrella.h"
-
-  export *
-  module * { export * }
-}
